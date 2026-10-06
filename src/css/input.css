@@ -1,10 +1,9 @@
 @font-face {
   font-family: 'Outfit';
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 400 700;
   font-display: swap;
-  src: url('../fonts/outfit-latin-variable-full-normal.woff2') format('woff2-variations'),
-       url('../fonts/outfit-latin-400-normal.woff2') format('woff2');
+  src: url('../fonts/outfit-latin-400-normal.woff2') format('woff2');
 }
 
 @tailwind base;
