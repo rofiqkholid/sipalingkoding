@@ -6,6 +6,22 @@
     <title>SiPalingKoding - Solusi Digital & Joki Skripsi Professional</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    if (!targetId) return;
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        history.pushState(null, null, ' ');
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body class="font-sans antialiased selection:bg-blue-600 selection:text-white" style="background-color: #f1f5f9; color: #334155;">
 
@@ -28,7 +44,7 @@
                     <a href="#services" class="hover:text-blue-600 transition-colors">Layanan Website</a>
                     <a href="#skripsi" class="hover:text-blue-600 transition-colors">Joki Skripsi & TA</a>
                     <a href="#consultant" class="hover:text-blue-600 transition-colors">IT Consultant</a>
-                    <a href="#founders" class="hover:text-blue-600 transition-colors">Tim & Founder</a>
+                    <a href="tim.html" class="hover:text-blue-600 transition-colors">Tim & Founder</a>
                 </nav>
 
                 <div class="hidden md:flex items-center space-x-4">
@@ -41,8 +57,42 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden" style="background-color: #f8fafc; border-bottom: 1px solid #e2e8f0;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="home" class="relative overflow-hidden" style="background-color: #f8fafc; border-bottom: 1px solid #e2e8f0; min-height: 100vh; height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 5rem;">
+        <!-- Desktop Decorative Silhouettes (Hidden on Mobile) -->
+        <div class="hidden md:block">
+            <!-- Left Silhouettes: 3 Subtle Icons (Code, Terminal, Monitor) -->
+            <div style="position: absolute; left: 35px; top: 18%; pointer-events: none; user-select: none; z-index: 0; opacity: 0.25;">
+                <svg width="110" height="110" style="color: #2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+            </div>
+            <div style="position: absolute; left: 110px; top: 50%; transform: translateY(-50%); pointer-events: none; user-select: none; z-index: 0; opacity: 0.25;">
+                <svg width="130" height="130" style="color: #2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+            </div>
+            <div style="position: absolute; left: 45px; bottom: 18%; pointer-events: none; user-select: none; z-index: 0; opacity: 0.25;">
+                <svg width="105" height="105" style="color: #2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+            </div>
+
+            <!-- Right Silhouettes: 2 Subtle Icons (Skripsi Toga, Certificate) -->
+            <div style="position: absolute; right: 55px; top: 24%; pointer-events: none; user-select: none; z-index: 0; opacity: 0.25;">
+                <svg width="135" height="135" style="color: #2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6"></path>
+                </svg>
+            </div>
+            <div style="position: absolute; right: 75px; bottom: 22%; pointer-events: none; user-select: none; z-index: 0; opacity: 0.25;">
+                <svg width="120" height="120" style="color: #2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
             <div class="text-center max-w-3xl mx-auto">
                 <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-6" style="color: #0f172a;">
                     Solusi Software & <span style="color: #2563eb;">Bimbingan Skripsi</span> Profesional
@@ -50,12 +100,21 @@
                 <p class="text-lg mb-8 leading-relaxed font-normal" style="color: #475569;">
                     Kami menghadirkan pembuatan website modern dari skala UMKM hingga Enterprise ERP Custom, serta pendampingan pengerjaan skripsi & tugas akhir khusus jurusan IT, Teknik Informatika, & Sistem Informasi.
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                     <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white shadow-md transition-all text-center" style="background-color: #2563eb;">
                         Lihat Layanan Website
                     </a>
                     <a href="#skripsi" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold shadow-sm transition-all text-center" style="background-color: #e2e8f0; color: #334155; border: 1px solid #cbd5e1;">
                         Layanan Joki Skripsi
+                    </a>
+                </div>
+
+                <!-- Scroll Down Arrow Decoration -->
+                <div class="pt-4 flex justify-center">
+                    <a href="#services" class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-slate-300 text-slate-500 hover:text-blue-600 hover:border-blue-600 transition-all shadow-sm animate-bounce" style="background-color: #ffffff;" title="Scroll ke bawah">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -285,6 +344,9 @@
                         <a href="https://github.com/alkiin01" target="_blank" class="w-9 h-9 rounded-full flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-slate-100 border border-slate-200 transition-all" title="GitHub Al Kindi">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
                         </a>
+                        <a href="https://www.linkedin.com/in/alkiin01/" target="_blank" class="w-9 h-9 rounded-full flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-slate-100 border border-slate-200 transition-all" title="LinkedIn Al Kindi">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+                        </a>
                     </div>
                 </div>
 
@@ -314,9 +376,9 @@
     <!-- Footer -->
     <footer class="py-16 text-sm" style="background-color: #ffffff; color: #475569; border-top: 1px solid #e2e8f0;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem; margin-bottom: 3rem;">
                 <!-- Col 1: Brand Info -->
-                <div class="space-y-4">
+                <div style="flex: 1 1 250px; min-width: 250px;" class="space-y-4">
                     <div class="flex items-center space-x-3">
                         <div class="w-9 h-9 rounded-xl flex items-center justify-center font-black text-lg text-white shadow-md" style="background-color: #2563eb;">
                             &lt;/&gt;
@@ -329,9 +391,9 @@
                 </div>
 
                 <!-- Col 2: Layanan -->
-                <div>
+                <div style="flex: 1 1 180px; min-width: 180px;">
                     <h4 class="font-bold text-base mb-4" style="color: #0f172a;">Layanan</h4>
-                    <ul class="space-y-2.5 text-sm">
+                    <ul class="space-y-2 text-sm">
                         <li><a href="#services" class="hover:text-blue-600 transition-colors">Pembuatan Website</a></li>
                         <li><a href="#services" class="hover:text-blue-600 transition-colors">Web Operasional & POS</a></li>
                         <li><a href="#services" class="hover:text-blue-600 transition-colors">Website ERP Custom</a></li>
@@ -340,20 +402,19 @@
                 </div>
 
                 <!-- Col 3: Perusahaan -->
-                <div>
+                <div style="flex: 1 1 180px; min-width: 180px;">
                     <h4 class="font-bold text-base mb-4" style="color: #0f172a;">Perusahaan</h4>
-                    <ul class="space-y-2.5 text-sm">
+                    <ul class="space-y-2 text-sm">
                         <li><a href="#home" class="hover:text-blue-600 transition-colors">Beranda</a></li>
-                        <li><a href="#founders" class="hover:text-blue-600 transition-colors">Tentang Kami</a></li>
+                        <li><a href="tim.html" class="hover:text-blue-600 transition-colors">Tim & Founder</a></li>
                         <li><a href="#consultant" class="hover:text-blue-600 transition-colors">IT Consultant</a></li>
-                        <li><a href="#founders" class="hover:text-blue-600 transition-colors">Tim & Founder</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 4: Hubungi Kami -->
-                <div>
+                <div style="flex: 1 1 250px; min-width: 250px;">
                     <h4 class="font-bold text-base mb-4" style="color: #0f172a;">Hubungi Kami</h4>
-                    <ul class="space-y-2.5 text-sm" style="color: #475569;">
+                    <ul class="space-y-2 text-sm" style="color: #475569;">
                         <li><strong style="color: #0f172a;">Email:</strong> sipalingkoding@gmail.com</li>
                         <li><strong style="color: #0f172a;">WhatsApp:</strong> +62 812-3456-7890</li>
                         <li><strong style="color: #0f172a;">Jam Kerja:</strong> Senin - Sabtu, 09:00 - 18:00 WIB</li>
